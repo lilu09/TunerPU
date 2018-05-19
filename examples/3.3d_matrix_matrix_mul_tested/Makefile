@@ -11,15 +11,16 @@ TYPE=bin
 #LIB_BIN_INSTALL_ROOT_DIR=/home/lu/Downloads
 #---------------------------------------------------------------------#
 
-#MACHINE_NAME=M4800 #EXCESS
-#MODULE_LOAD=BLAS CLANG NVML PCM CUPTI OPENCL OPENMP OPENGL PTHREAD CXX_PTHREAD R RCPP RINSIDE
+#remember that no space after MACHINE_NAME or MODULE_LOAD
+MACHINE_NAME=M4800#EXCESS
+MODULE_LOAD=BLAS OPENMP# CLANG NVML PCM CUPTI OPENCL OPENGL PTHREAD CXX_PTHREAD R RCPP RINSIDE
+NUM_OF_VIRTUAL_CORES:=$(shell cat /proc/cpuinfo | grep "^processor" | wc -l)
 #make cool EC=-DDEBUG #make allclean cool EC="-DVERBOSE=1"
 
 #USR_INC_SEARCH_PATH=x y
 
-NUM_OF_VIRTUAL_CORES:=$(shell cat /proc/cpuinfo | grep "^processor" | wc -l)
-
 EC=-D_FORCE_INLINES -DXPDL_NUM_OF_GPUS=1 -DXPDL_NUM_OF_HW_THREADS=$(NUM_OF_VIRTUAL_CORES) -DENABLE_CUDA_TIME -I../../ -I../../../vectorpu -I../../../meterpu
+EL=-lcublas
 #EC=-g -DDEBUG #Extra Compile flag
 #EL=-g -DDEBUG #Extra Linker flag
 #RP=sudo #Running Prefix
@@ -32,17 +33,17 @@ EC=-D_FORCE_INLINES -DXPDL_NUM_OF_GPUS=1 -DXPDL_NUM_OF_HW_THREADS=$(NUM_OF_VIRTU
 #DEBUG=BACK_TRACE
 
 
-#NO_CUDA_MEMCHECK:=true
+NO_CUDA_MEMCHECK:=true
 
 #PROFILE=true
 
 #NO_STRIP=true
 
-#NO_CPPCHECK=true
+NO_CPPCHECK=true
 
 #NO_WARNINGS:=true
 
-NO_OPTIMIZATION:=true
+#NO_OPTIMIZATION:=true
 
 #ENABLE_RTTI:=true
 

@@ -23,9 +23,9 @@ void vector_scale_gpu(float *x, size_t N, float val){
 }
 
 
-#include <lib/tunable.h>
-#include <lib/vectorpu.h>
-#include <lib/meterpu.h>
+#include <tunable.h>
+#include <vectorpu.h>
+#include <meterpu.h>
 
 typedef void (*vector_scale)(float *, size_t, float);
 #define VECTOR_SCALE_NUM_VARIANTS 2
