@@ -15,29 +15,6 @@
 #define BASE
 
 
-//#include <cuda_runtime.h>
-//#include <cublas_v2.h>
-
-/*void matrix_mul_cublas(float const * const a,float const * const b,float * const c,size_t const ha,size_t const wa,size_t const wb)*/
-/*{*/
-
-/*const float alf = 1.0f;*/
-/*const float bet = 0.0f;*/
-/*const float *alpha = &alf;*/
-/*const float *beta = &bet;*/
-
-/*cublasStatus_t stat;*/
-/*cublasHandle_t handle;*/
-
-/*stat = cublasCreate(&handle);*/
-/*assert(stat == CUBLAS_STATUS_SUCCESS);*/
-
-/*cublasSgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, static_cast<int>(wb), static_cast<int>(ha), static_cast<int>(wa), alpha, b, static_cast<int>(wb), a, static_cast<int>(wa), beta, c, static_cast<int>(wb));*/
-
-/*cublasDestroy(handle);*/
-/*}*/
-
-//8
 int main(int argc, char* argv[])
 {
 
@@ -48,14 +25,8 @@ int main(int argc, char* argv[])
 	unsigned int const problem_size=std::atoi(argv[1]);
 
 
-	/*const size_t ha=200, wa=200, wb=200;*/
 	const size_t ha=problem_size, wa=problem_size, wb=problem_size;
 
-/*#ifdef BASE*/
-
-/*#endif*/
-
-/*#ifdef OPT*/
 	{
 
 
@@ -92,15 +63,8 @@ int main(int argc, char* argv[])
 			std::cout<<my_meter.get_value()<<std::endl;
 		}
 
-		/*std::cout<<mytuner.predict(ha,wa,wb)<<std::endl;*/
-
-
-		/*std::for_each(RI(c), REI(c), [](float const i){assert(i==200.0f);}) ;*/
-		/*std::for_each(RI(c), REI(c), [](float const i){assert(i==10.0f);}) ;*/
-		/*std::for_each(RI(c), REI(c), [problem_size](float const i){assert(i==float(problem_size));}) ;*/
 
 	}
-/*#endif*/
 
 
 
