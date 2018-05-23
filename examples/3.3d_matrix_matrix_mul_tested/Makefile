@@ -26,7 +26,7 @@ EL=-lcublas
 #RP=sudo #Running Prefix
 #EF=$(PCM_SRC)/cpucounters.cpp #Extra Files
 #EXCLUDE_SRC_FILES=funcallsample.cpp
-ERP:=100
+ERP:=10
 
 #DEBUG=BATCH
 #DEBUG=INTERACTIVE
