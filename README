@@ -6,8 +6,8 @@ See examples for more information.
 
 To setup, one need to download MeterPU and VectorPU as well,
 
-MeterPU: https://github.com/lilu09/meterpu.git
-VectorPU: https://github.com/lilu09/vectorpu.git
+MeterPU: git clone https://github.com/lilu09/meterpu.git
+VectorPU: git clone https://github.com/lilu09/vectorpu.git
 
 Or more conveniently, clone the repo that contains TunerPU,
 MeterPU, and VectorPU.
@@ -16,4 +16,8 @@ git clone https://github.com/lilu09/framework_integration.git
 git update --init
 
 To run an example successfully,
-go to 
+
+cd examples/3.3d_matrix_matrix_mul_tested
+make
+make run
+xdot tree_depth_2.dot
